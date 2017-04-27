@@ -6,7 +6,7 @@
 
 include("telegram.php");
 
-$bot_id = "374075883:AAE4Ut-VIU39TvvEvYczP7EKz84B4Ax9jYI";
+$bot_id = "BOT_Token";
 $api_key = "e496e314e83fd43e"
 
 
