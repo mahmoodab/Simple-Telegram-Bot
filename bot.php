@@ -26,6 +26,7 @@ if (strpos($text, '/url') !== false) {
 	$ctext = str_replace("/url ","",$text);
 
 	$json = file_get_contents('http://api.page2images.com/restfullink?p2i_url='.$ctext.'&p2i_key='.$api_key);
+	sleep(10);
 	$obj = json_decode($json);
 	$content = file_get_contents("$obj->image_url");
 	//Store in the filesystem.
@@ -43,7 +44,11 @@ if(isset($obj->image_url)){
 
 }
 }elseif($text === "/start"){
-	$d = array('chat_id' => $chat_id, 'text' => "Welcome To isave Bot By @ox_9n");
+	$d = array('chat_id' => $chat_id, 'text' => "Welcome To TakeShotBot Bot By @ox_9n");
+	$telegram->sendMessage($d);
+
+}elseif($text === "/dev"){
+        $d = array('chat_id' => $chat_id, 'text' => "@DevMah");
 	$telegram->sendMessage($d);
 
 }else{
